@@ -29,7 +29,7 @@ sudo apt install -y \
   g++ libprotobuf-dev protobuf-compiler pkg-config nodejs gcc autoconf \
   bison build-essential libssl-dev libyaml-dev libreadline6-dev \
   zlib1g-dev libncurses5-dev libffi-dev libgdbm-dev \
-  redis-server redis-tools postgresql postgresql-contrib \
+  redis-server redis-tools \ 
   libidn11-dev libicu-dev libjemalloc-dev nginx
   
 ## (c.f. https://qiita.com/yakumo/items/10edeca3742689bf073e about not needing to install "libgdbm5")
@@ -69,9 +69,9 @@ else
   echo ""
 fi 
 # Setup PostgreSQL
-set +e
-echo "CREATE USER mastodon CREATEDB" | sudo -u postgres psql -f -
-set -e 
+# set +e
+# echo "CREATE USER mastodon CREATEDB" | sudo -u postgres psql -f -
+# set -e 
 
 # Setup Mastodon 
 rbenv global $(cat ~/live/.ruby-version)
